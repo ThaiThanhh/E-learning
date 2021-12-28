@@ -13,12 +13,12 @@ exports.getSignupForm = (req, res) => {
 exports.getLogin1Form = (req, res) => {
 	res.status(200).render('login-1', {
 		title: 'Log into your account',
-		layout: false
+		layout: 'login-layout'
 	});
 };
 exports.getLogin2Form = (req, res) => {
 	res.status(200).render('login-2', {
 		title: 'Log into your account',
-		layout: false
+		layout: 'login-layout'
 	});
 };
