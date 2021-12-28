@@ -1,35 +1,89 @@
-<div class="page-header align-items-start min-vh-100" style="background-image: url('./img/login-bg.jpg'); height: 100%">
-    <span class="mask bg-gradient-dark opacity-6"></span>
-    <div class="container my-auto">
-        <div class="row">
-            <div class="col-lg-4 col-md-8 col-12 mx-auto">
-                <div class="card z-index-0 fadeIn3 fadeInBottom">
-                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                        <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
-                            <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="fonts/icomoon/style.css"> -->
+    <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Login</title>
+  </head>
+  <body>
+    <section class="vh-100 bg-image">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-4">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-12">
+              <div class="card" style="border-radius: 15px;">
+                <div class="card-body p-5">
+
+                  <div class="d-lg-flex half">
+                    <div class="bg order-1" style="background-image: url('images/duck.jpg');"></div>
+                    
+                    <div class="contents_lg order-2">
+                      <div class="container_lg">
+                        <div class="row align-items-center justify-content-center">
+                          <div class="col-md-7">
+                            <form action="#" method="post">
+                              <div class="social-login">
+                                <a href="#" class="facebook btn rounded-lg d-flex justify-content-center align-items-center">
+                                  <i class="fab fa-google"></i> Tiếp tục với Google
+                                </a>
+                                <a href="#" class="twitter btn rounded-lg d-flex justify-content-center align-items-center">
+                                  <i class="fab fa-facebook"></i> Tiếp tục với Facebook
+                                </a>
+                                <a href="#" class="google btn rounded-lg d-flex justify-content-center align-items-center">
+                                  <i class="fab fa-github"></i> Tiếp tục với Github
+                                </a>
+                                <a href="#" class="google btn rounded-lg d-flex justify-content-center align-items-center">
+                                  <span class="mr-3"></span> Đăng ký bằng Email
+                                </a>
+                              </div>
+                
+                              <span class="d-block text-center my-4 text-muted">&mdash; OR LOGIN WITH EMAIL &mdash;</span>
+                
+                              <form>
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Email</label>
+                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nhập email">
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputPassword1">Mật khẩu</label>
+                                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nhập mật khẩu">
+                                  <a href="#">Quên mật khẩu?</a>
+                                </div>
+                                <div class="form-group">
+                                  <button type="button" class="btn btn-primary btn-lg btn-block">Đăng nhập</button>
+                                </div>
+                              </form>
+                            </form>
+                          </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                         <form role="form" class="text-start" action="/index">
-                            <div class="input-group input-group-outline my-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="input-group input-group-outline mb-3">
-                                <label class="form-label">Password</label>
-                                <input type="password" class="form-control">
-                            </div>
-                            <div class="text-center">
-                                <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2"><a href="/index">Sign in</a></button>
-                            </div>
-                            <p class="mt-4 text-sm text-center">
-                                Don't have an account?
-                                <a href="/sign-up" class="text-primary text-gradient font-weight-bold">Sign up</a>
-                            </p>
-                        </form>
-                    </div>
+                      </div>
+                    </div>                    
+                  </div>
+
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </section>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

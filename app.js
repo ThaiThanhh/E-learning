@@ -16,13 +16,10 @@ const viewRouter = require('./routes/viewRoutes');
 const app = express();
 
 //View engine
-const ehbs = hbs.create({
-	defaultLayout: 'main',
-	extname: '.hbs',
-})
-app.engine('hbs', ehbs.engine);
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'views'));
+
+require('./middlewares/handlebars')(app)
+
+require('./middlewares/session')(app)
 
 //Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -58,6 +55,5 @@ app.use('/', viewRouter);
 app.all('*', (req, res, next) => {
 	next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
-app.use(globalErrorHandler);
 
 module.exports = app;
