@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+}
+:root{
+    --spacing: 25px;
+    --columns: 4;
+}
+.contain{
+    width: 100%;
+    margin-top: 10%;
+    position: relative;
+}
+.contain h2{
+    background-color: #eee;
+    width: 150px;
+    font-size:24px;
+    padding: 5px;
+    height: 40px;
+    border-radius: 10px; 
+}
+.search{
+    font-size:20px;
+    padding: 5px;
+    height: 40px;
+}
+.courses{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--spacing));
+}
+@media screen and (max-width: 1024x) {
+    .courses {
+      --columns: 2;
+    }
+}
+@media screen and (max-width: 780px) {
+    .courses {
+      --spacing: 15px;
+      --columns: 1;
+    }
+}
+.course {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: calc(calc(100% / var(--columns)) - var(--spacing));
+    margin-left: var(--spacing);
+    margin-bottom: var(--spacing);
+}
+.courses-top{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+.courses-image {
+    height: 200px;
+    width:100%;
+    flex-shrink: 0;
+}
+
+.courses-center .fa{
+    color: #ff9f1a;
+    font-size: 10px;
+}
+.courses-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.courses-name {
+    font-weight: 500;
+    margin-bottom: 20px;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    font-size: 14px;
+    line-height: 1;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+.courses-bottom{
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    flex-shrink: 0;
+    flex:1
+}
+.courses-teacher-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 100rem;
+    object-fit: cover;
+}
+.courses-teacher-name{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+}
+.overlay{
+    opacity: 0;
+    position: absolute;
+    width: 200px;
+}
+.courses-top:hover .overlay{
+    opacity: 1;
+    transition:0.5s ease;
+}
+.overlay .fa{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255,0);
+    color: #000;
+    height: 35px;
+    width: 35px;
+    font-size:20px;
+    margin: 5%;
+    margin-bottom: 50%;
+}
+.overlay .btn-secondary{
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+}
+.pagination .page-link{
+    color:#333;
+}
+
+
