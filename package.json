@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/MG-CoV/mg-cov.git"
   },
-  "author": "mg_cov-dev-team",
+  "author": "Nhom 9",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MG-CoV/mg-cov/issues"
@@ -32,7 +32,10 @@
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
     "nodemailer": "^6.5.0",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
     "pg": "^8.7.1",
+    "pg-promise": "^10.11.1",
     "validator": "^10.11.0",
     "win-node-env": "^0.5.0",
     "xss-clean": "^0.1.1"

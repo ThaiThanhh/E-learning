@@ -9,7 +9,7 @@ const hbs = require('express-handlebars');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 //ROUTERS
-const viewRouter = require('./routes/viewRoutes');
+const route = require('./routes/index.R')
 
 
 //GLOBAL MIDDLEWARES
@@ -49,8 +49,10 @@ app.use(cors({
 app.use(CookieParser());
 app.use(xss());
 
+//Passport
+require('./middlewares/passport')(app)
 //ROUTES
-app.use('/', viewRouter);
+route(app)
 
 app.all('*', (req, res, next) => {
 	next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

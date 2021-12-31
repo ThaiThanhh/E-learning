@@ -1,37 +1,49 @@
 var passport = require("passport"),
-  LocalStrategy = require("passport-local").Strategy
-const userM = require('../models/user.M')
+  LocalStrategy = require("passport-local").Strategy;
+const accM = require("../models/account.M");
+const bcrypt = require('bcrypt')
 module.exports = (app) => {
-  passport.use(new LocalStrategy(
-    async (username, password, done) => {
-      let user
-      try {
-        user = await username.get(username)
-        if (!user) {
-          return done(null, false, {message: 'Incorrect username'})
+  passport.use(
+    new LocalStrategy(
+      {
+        usernameField: "username",
+        passwordField: "password",
+      },
+      async (username, password, done) => {
+        let account;
+        try {
+          account = await accM.get(username);
+          console.log(account)
+          if (!account) {
+            return done(null, false, { message: "Incorrect username" });
+          }
+          const challengeResult = await bcrypt.compare(
+            password,
+            account.password
+          );
+          if (!challengeResult) {
+            return done(null, false, { message: "Incorrect password" });
+          }
+          return done(null, account);
+        } catch (error) {
+          return done(error);
         }
-        const challengeResult = await bcrypt.compare(password, user.f_Password)
-        if (!challengeResult) {
-          return done(null, false, {message: 'Incorrect password'})
-        }
-        return done(null, user)
-      } catch (error) {
-        return done(error)
       }
-    }
-  )
-    
+    )
   );
-  app.use(passport.initialize())
-  app.use(passport.session())
 
-  passport.serializeUser(function(user, done) {
-    done(null, user.id)
-  })
+  passport.serializeUser(function (account, done) {
+    done(null, account);
+  });
 
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user)
-    })
-  })
-}
+  passport.deserializeUser(async function (account, done) {
+    try {
+      const acc = await accM.get(account.username);
+      done(null, acc)
+    } catch (error) {
+      done(new Error("error"), null);
+    }
+  });
+  app.use(passport.initialize());
+  app.use(passport.session());
+};
