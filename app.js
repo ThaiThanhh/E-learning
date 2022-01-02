@@ -15,6 +15,15 @@ const route = require('./routes/index.R')
 //GLOBAL MIDDLEWARES
 const app = express();
 
+//CORS settings
+app.use(
+	cors({
+		credentials: true,
+		origin: 'http://localhost:3000',
+		optionsSuccessStatus: 200
+	})
+);
+
 //View engine
 
 require('./middlewares/handlebars')(app)
