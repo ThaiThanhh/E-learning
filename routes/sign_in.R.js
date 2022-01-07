@@ -5,4 +5,5 @@ const route = express.Router()
 route.get('/', sign_inController.getSignin)
 
 route.post('/', sign_inController.login)
+
 module.exports = route

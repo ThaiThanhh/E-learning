@@ -13,7 +13,7 @@ module.exports = (app) => {
         let account;
         try {
           account = await accM.get(username);
-          console.log(account)
+  
           if (!account) {
             return done(null, false, { message: "Incorrect username" });
           }
@@ -32,13 +32,13 @@ module.exports = (app) => {
     )
   );
 
-  passport.serializeUser(function (account, done) {
-    done(null, account);
+  passport.serializeUser(function (user, done) {
+    done(null, user);
   });
 
-  passport.deserializeUser(async function (account, done) {
+  passport.deserializeUser(async function (user, done) {
     try {
-      const acc = await accM.get(account.username);
+      const acc = await accM.get(user.username);
       done(null, acc)
     } catch (error) {
       done(new Error("error"), null);
