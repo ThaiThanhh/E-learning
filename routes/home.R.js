@@ -11,4 +11,5 @@ route.get('/en-courses', viewController.getEnableCourse);
 route.get('/list-courses', viewController.getListCourse);
 route.get('/search-courses', viewController.getSearchCourse);
 route.get('/teacher-information', teacherController.getTeacherInfor)
+route.get('/course-info', viewController.getCourseInfor)
 module.exports = route

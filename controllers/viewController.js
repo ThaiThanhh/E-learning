@@ -50,6 +50,13 @@ exports.getLogin2Form = (req, res) => {
 exports.getTeacherInfor = (req, res) => {
 	res.status(200).render('teacher-information', {
 		title: 'Teacher-information',
-		layout: 'login-layout'
+		layout: 'main'
+	});
+};
+
+exports.getCourseInfor = (req, res) => {
+	res.status(200).render('course-information', {
+		title: 'Course-information',
+		layout: 'main'
 	});
 };

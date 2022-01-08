@@ -2,10 +2,6 @@
     margin: 0;
     padding: 0;
 }
-body{
-    font-family: 'Roboto', sans-serif;
-    padding: 20px;
-}
 :root{
     --spacing: 25px;
     --columns: 4;
