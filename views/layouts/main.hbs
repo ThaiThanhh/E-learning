@@ -9,6 +9,8 @@
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Nucleo Icons -->
+
+    <title>{{title}}</title>
     <link href="./css/nucleo-icons.css" rel="stylesheet" />
     <link href="./css/nucleo-svg.css" rel="stylesheet" />
     <link href="./css/nucleo-svg.css" rel="stylesheet" />
@@ -18,24 +20,46 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link id="pagestyle" href="./css/material-dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/bootstrap-select.css">
     <link rel="stylesheet" href="./css/style.css">
     {{!-- Bootstrap select CSS --}}
     
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link id="pagestyle" href="./css/material-dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/bootstrap-select.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/list-courses.css">
+    <link rel="stylesheet" href="./css/courses.css">
 </head>
 <body>
     <div class="app">
         <header class="app__header">
             {{>header}}
         </header>
-        <div class="app__body ">
+        <div class="app__body home__body">
             {{{body}}}
         </div>
         <footer class="app_footer">
             {{>footer}}
         </footer>
     </div>
+    <script src="./js/core/bootstrap.bundle.min.js"></script>
+    <script src="./js/core/bootstrap.min.js"></script>
+    <script src="./js/core/bootstrap.popper.min.js"></script>
 </body>
 </html>
