@@ -8,6 +8,7 @@ const morgan = require('morgan');
 const hbs = require('express-handlebars');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
+const csp = require('./utils/csp');
 
 //ROUTERS
 const route = require('./routes/index.R')
@@ -17,13 +18,13 @@ const route = require('./routes/index.R')
 const app = express();
 
 //CORS settings
-/*app.use(
+app.use(
 	cors({
 		credentials: true,
-		origin: 'http://localhost:3000',
+		origin: 'http://localhost:8000',
 		optionsSuccessStatus: 200
 	})
-);*/
+);
 
 
 //View engine

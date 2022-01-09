@@ -14,6 +14,14 @@ module.exports = {
 
         return res
     },
+    getByID: async userID => {
+        const res = await db.get(tbName,'userid',userID)
+        if (res.length > 0) {
+            return res[0]
+        }
+
+        return res
+    },
     add: async user => {
         const res = await db.add(tbName, user)
         return res

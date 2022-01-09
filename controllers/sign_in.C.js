@@ -20,7 +20,6 @@ exports.login = async (req, res, next) => {
         });
         
       }
-      console.log(user)
       if (!user) {
         return res.status(200).render("login-2",{
           title: 'Login',
