@@ -16,3 +16,30 @@
     padding: 0 !important;
     margin: 0 !important;
 }
+.navbar {
+    margin: 0 !important;
+}
+.navbar-container {
+    padding: 0 !important;
+}
+.dropdown-toggle {
+    background: transparent;
+    border: 0px;
+}
+.user-icon-container:hover .user-menu{
+    display: block !important;
+}
+.user-icon-container {
+    cursor: pointer;
+    animation: ease 1s;
+}
+.user-infor {
+    width: 50%;
+}
+.form-label {
+    width: 100px;
+}
+.btn.primary-btn {
+    background-color: #7766C6;
+    color: white !important;
+}
