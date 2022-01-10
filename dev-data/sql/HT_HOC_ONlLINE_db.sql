@@ -94,6 +94,7 @@ create table COURSE (
    CAPACITY             INT4                 null,
    FEE                  INT4                 null,
    DESCRIPTION          TEXT                 null,
+   URL_IMAGE            TEXT                 NULL,
    constraint PK_COURSE primary key (COURSEID)
 );
 
@@ -216,14 +217,14 @@ create table TEACHER (
 /* Table: "USER"                                                */
 /*==============================================================*/
 create table "USER" (
-   USERID               SERIAL                 not null,
+   USERID               SERIAL               not null,
    FULLNAME             VARCHAR(50)          null,
    DATEOFBIRTH          DATE                 null,
    ADDRESS              VARCHAR(255)         null,
    EMAIL                VARCHAR(255)         null,
    PHONENUMBER          CHAR(10)             null,
    GENDER               CHAR(1)              null,
-   AVATAR               VARCHAR(255)         null,
+   AVATAR               TEXT                 null,
    ROLE                 NUMERIC              null,
    constraint PK_USER primary key (USERID)
 );

@@ -1,13 +1,13 @@
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Huỳnh Thái Thành', '05/30/2001', 'Q1, TPHCM','thanh@gmail.com','0123456789','M',2);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Nguyễn Quang An', '09/14/2001', 'Q1, TPHCM','an@gmail.com','0123456789','M', 1);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Huỳnh Ngọc Văn', '10/11/2001', 'Q1, TPHCM','van@gmail.com','0123456789','M', 0);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Nguyễn Thị Ngọc Mai', '08/20/2001', 'Q1, TPHCM','mai@gmail.com','0123456789','F',0);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Ngô Đình Minh Như', '09/26/2002','Q1, TPHCM', 'nhu@gmail.com','0123456789','F',2);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Trần Lê Thanh Tuyền', '02/16/2001','Q1, TPHCM', 'tuyen@gmail.com','0123456789','F',1);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Huỳnh Trường Vũ', '09/24/2001','Q1, TPHCM', 'vu@gmail.com','0123456789','M', 1);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Kiều Thúy Vy', '10/05/2001','Q1, TPHCM', 'vy@gmail.com','0123456789','F', 1);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Lê Đức Anh', '09/15/2001','Q1, TPHCM', 'anh@gmail.com','0123456789','M', 0);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, role) values ('Nguyễn Thôi Kim Phương', '11/17/2001', 'Q1, TPHCM','phuong@gmail.com','0123456789','F', 0);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Huỳnh Thái Thành', '05/30/2001', 'Q1, TPHCM','thanh@gmail.com','0123456789','M', './img/thanh.jpg',2);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Nguyễn Quang An', '09/14/2001', 'Q1, TPHCM','an@gmail.com','0123456789','M', './img/an.jpg', 1);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Huỳnh Ngọc Văn', '10/11/2001', 'Q1, TPHCM','van@gmail.com','0123456789','M', './img/van.jpg', 0);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Nguyễn Thị Ngọc Mai', '08/20/2001', 'Q1, TPHCM','mai@gmail.com','0123456789','F', './img/mai.jpg',0);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Ngô Đình Minh Như', '09/26/2002','Q1, TPHCM', 'nhu@gmail.com','0123456789','F', './img/mai2.jpg',2);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Trần Lê Thanh Tuyền', '02/16/2001','Q1, TPHCM', 'tuyen@gmail.com','0123456789','F', './img/tram.jpg',1);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Huỳnh Trường Vũ', '09/24/2001','Q1, TPHCM', 'vu@gmail.com','0123456789','M', './img/dat.jpg', 1);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Kiều Thúy Vy', '10/05/2001','Q1, TPHCM', 'vy@gmail.com','0123456789','F', './img/thanh2.jpg', 1);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Lê Đức Anh', '09/15/2001','Q1, TPHCM', 'anh@gmail.com','0123456789','M', './img/an2.jpg', 0);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Nguyễn Thôi Kim Phương', '11/17/2001', 'Q1, TPHCM','phuong@gmail.com','0123456789','F', './img/mai3.jpg', 0);
 
 insert into account (username, password, status, role, userid) values ('admin1', '$2a$12$q5Mev.uQO7VfUsz2vIJ1j.eljgiQFtReMJQKXJycFI4MmlwMvehsK', 1 , 2, 1);
 insert into account (username, password, status, role, userid) values ('an123', '$2a$12$tGJyRan/jn2FF0QgDhfvweP7NLXHpNfFbjgP3XTl0b9LcWfd2kJqO', 1 , 1, 2);
@@ -34,16 +34,16 @@ insert into teacher (userid, major, introduction) values (6, 'Công nghệ thôn
 insert into teacher (userid, major, introduction) values (7, 'Ngôn ngữ Anh', 'tốt nghiệp loại giỏi chuyên ngành hệ thống thông tin - Đại học Khoa học tự nhiên TPHCM');
 insert into teacher (userid, major, introduction) values (8, 'Marketing', 'tốt nghiệp loại giỏi chuyên ngành hệ thống thông tin - Đại học Khoa học tự nhiên TPHCM');
 
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 1', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 2', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 3', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 4', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 5', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 6', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 7', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 7);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 8', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 7);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 9', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 8);
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid) values ('khóa học 10', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 8);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('HTML, CSS từ Zero đến Hero', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/html.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('JavaScript Cơ Bản', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/jscb.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Kiến Thức Nhập Môn', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/ktnt.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Responsive Với Grid System', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/responsive.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Node & ExpressJS', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/nodejs.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Xây Dựng Website với ReactJS', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/reactjs.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('HTML, CSS Tips & Tricks', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 7, './img/tip&trick.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('JavaScript Nâng Cao', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 7, './img/jsnc.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('App "Đừng Chạm Tay Lên Mặt"', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 8, './img/dtyf.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Làm việc với Terminal & Ubuntu', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 8, './img/win.png');
 
 insert into "JOIN" (courseid,userid, registered_at) values (1, 3, '01/01/2021');
 insert into "JOIN" (courseid,userid, registered_at) values (1, 10, '01/01/2021');
