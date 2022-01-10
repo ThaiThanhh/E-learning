@@ -14,8 +14,8 @@ module.exports = {
 
         return res
     },
-    add: async user => {
-        const res = await db.add(tbName, user)
+    add: async account => {
+        const res = await db.add(tbName, account)
         return res
     },
     delete: async userName => {

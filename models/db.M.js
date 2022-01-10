@@ -40,6 +40,18 @@ exports.get = async (tbName, fieldName, value) => {
         console.log('err')
     }
 }
+exports.update = async (tbName, fieldUpd, fieldName, value, upd) => {
+    const table = new pgp.helpers.TableName({ table: tbName, schema: schema})
+    const qStr = pgp.as.format(`UPDATE "${tbName}" SET "${fieldUpd}" = ${upd}  WHERE "${fieldName}"=${value}`, table)
+    console.log(qStr)
+    try {
+        const res = await db.one(qStr)
+        console.log('res=', res)
+        return res
+    } catch(error) {
+        console.log(error)
+    }
+}
 
 exports.add = async (tbName, entity) => {
     const table = new pgp.helpers.TableName({ table: tbName, schema: schema})
@@ -50,7 +62,7 @@ exports.add = async (tbName, entity) => {
         console.log('success')
         return res
     } catch(error) {
-        console.log('err')
+        console.log(error)
     }
 }
 

@@ -46,3 +46,17 @@ exports.getLogin2Form = (req, res) => {
 		layout: 'login-layout'
 	});
 };
+
+exports.getTeacherInfor = (req, res) => {
+	res.status(200).render('teacher-information', {
+		title: 'Teacher-information',
+		layout: 'main'
+	});
+};
+
+exports.getCourseInfor = (req, res) => {
+	res.status(200).render('course-information', {
+		title: 'Course-information',
+		layout: 'main'
+	});
+};

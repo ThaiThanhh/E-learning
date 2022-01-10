@@ -4,6 +4,9 @@ const saltRounds = 10;
 const passport = require('passport')
 
 exports.getSignin = (req, res) => {
+    if (req.user) {
+      return res.redirect('/')
+    }
     res.status(200).render("login-2",{
       title: 'Login',
       layout: false
@@ -13,22 +16,38 @@ exports.getSignin = (req, res) => {
 exports.login = async (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
       if (err) {
-        // console.log('1')
-        return
+        return res.status(200).render("login-2",{
+          title: 'Login',
+          layout: false,
+          notify: err
+        });
+        
       }
-      console.log(user)
       if (!user) {
-        console.log('lỗi')
-        return
+        return res.status(200).render("login-2",{
+          title: 'Login',
+          layout: false,
+          notify: 'Sai tên đăng nhập!'
+        });
+        
       }
       req.logIn(user, function(err) {
         if (err) {
-          console.log('err')
-          console.log(err)
-          return
+          return res.status(200).render("login-2",{
+            title: 'Login',
+            layout: false,
+            notify: err
+          });
         }
         
         return res.redirect('/')
       })
     }) (req, res, next)
+}
+
+exports.logOut = async(req, res) => {
+  if (req.user) {
+    req.logOut()
+  }
+  res.redirect('/signin')
 }
