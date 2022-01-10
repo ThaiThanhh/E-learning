@@ -4,6 +4,9 @@ const saltRounds = 10;
 const passport = require('passport')
 
 exports.getSignin = (req, res) => {
+    if (req.user) {
+      return res.redirect('/')
+    }
     res.status(200).render("login-2",{
       title: 'Login',
       layout: false

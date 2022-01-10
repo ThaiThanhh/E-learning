@@ -1,6 +1,6 @@
 const db = require('./db.M')
-const tbName = 'USER'
-const idFieldName = 'username'
+const tbName = 'teacher'
+const idFieldName = 'userid'
 module.exports = {
     all: async () => {
         const res = await db.load(tbName)
@@ -31,7 +31,4 @@ module.exports = {
         return res
 
     },
-    updateRole: async (role, userid) => {
-        const res = await db.update(tbName,'role', 'userid',userid,role)
-    }
 }

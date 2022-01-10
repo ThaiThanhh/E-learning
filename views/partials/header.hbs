@@ -1,50 +1,138 @@
 <div class="container-fluid navbar-container">
-<nav class="navbar navbar-main navbar-expand-lg top-1 px-0 mx-4 shadow-none " style="background-color: #7766C6;" id="navbarBlur" data-scroll="true">
-      <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-         <a href="/"><img src="./img/image 6.png" style="width:50px; heigth:50px;"></a>
-     </nav>
-     <a href="javascript:;" class="nav-link text-body p-0 position-relative ms-4">
-                <b class="text-white">Trở Thành Giảng Viên</b>
-              </a>
-     
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center" >
-            <div class="input-group input-group-outline">
-              <input type="text" placeholder="Search here" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
-            </div>
+  <nav
+    class="navbar navbar-main navbar-expand-lg top-1 px-0 mx-4 shadow-none"
+    style="background-color: #7766C6;"
+    id="navbarBlur"
+    data-scroll="true"
+  >
+    <div class="container-fluid py-1 px-3">
+      <nav aria-label="breadcrumb">
+        <a href="/"><img
+            src="./img/image 6.png"
+            style="width:50px; heigth:50px;"
+          /></a>
+      </nav>
+      <a
+        href="javascript:;"
+        class="nav-link text-body p-0 position-relative ms-4"
+      >
+        <b class="text-white">Trở Thành Giảng Viên</b>
+      </a>
+
+      <div
+        class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
+        id="navbar"
+      >
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="input-group input-group-outline">
+            <input
+              type="text"
+              placeholder="Search here"
+              class="form-control"
+              onfocus="focused(this)"
+              onfocusout="defocused(this)"
+            />
           </div>
-          <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item ps-3">
-              <a href="/signin" class="nav-link text-body p-0 position-relative">
-                <b class="text-white">Đăng Nhập</b>
-              </a>
-            </li>
-            <li class="nav-item ps-3">
-              <a href="/signup" class="nav-link text-body p-0 position-relative">
-                <b class="text-white">Đăng Ký</b>
-              </a>
-            </li>
-            <li class="nav-item px-3 position-relative user-icon-container">
-              <div class="text-body p-0 position-relative" >
-                <i class="fas fa-user text-white"></i>
-              </div>
-              <div class="user-menu position-absolute top-26 end-0 bg-light d-none">
-                <a href="/user-info" class="dropdown-item">Thông tin cá nhân</a>
-                <a href="/teacher" class="dropdown-item">Giáo viên</a>
-                <a href="/signout" class="dropdown-item">Đăng xuất</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown pe-2">
-              <a href="javascript:;" class="nav-link text-body p-0 position-relative">
-               <i class="fas fa-bell text-white"></i>
-              </a>
-            </li>
-        </ul>
         </div>
+        <ul class="navbar-nav justunlessy-content-end">
+          <li class="nav-item ps-3">
+            <a href="/signin" class="nav-link text-body p-0 position-relative">
+              <b class="text-white">Đăng Nhập</b>
+            </a>
+          </li>
+          <li class="nav-item ps-3">
+            <a href="/signup" class="nav-link text-body p-0 position-relative">
+              <b class="text-white">Đăng Ký</b>
+            </a>
+          </li>
+          <li class="nav-item px-3 position-relative user-icon-container">
+            <div class="text-body p-0 position-relative">
+              <i class="fas fa-user text-white"></i>
+            </div>
+            <div
+              class="user-menu position-absolute top-26 end-0 bg-light d-none"
+            >
+              <a href="/user-info" class="dropdown-item">Thông tin cá nhân</a>
+              <a
+                href="/teacher"
+                class="dropdown-item"
+                {{#unless isTeacher}}
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                {{/unless}}
+              >Giáo viên</a>
+              <a href="/signout" class="dropdown-item">Đăng xuất</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown pe-2">
+            <a
+              href="javascript:;"
+              class="nav-link text-body p-0 position-relative"
+            >
+              <i class="fas fa-bell text-white"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 </div>
 <!-- Example single danger button -->
 
 <!-- Example single danger button -->
+{{#unless isTeacher}}
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Đăng Ký Trở Thành Giáo
+          Viên</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body m-3">
+        <form action="/" method="post">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingMajor"
+            placeholder="Password"
+            name="major"
+          />
+          <label for="floatingMajor">Bằng cấp</label>
+        </div>
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 150px"
+            name="introduction"
+          ></textarea>
+          <label for="floatingTextarea2">Giới thiệu</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Close</button>
+        <button type="summit" class="btn primary-btn">Save changes</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+{{/unless}}

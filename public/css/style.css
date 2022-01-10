@@ -43,3 +43,6 @@
     background-color: #7766C6;
     color: white !important;
 }
+.modal-open {
+    padding: 0 !important;
+}
