@@ -1,5 +1,6 @@
 const userM = require('../models/user.M')
-const teacherM = require('../models/teacher.M')
+const teacherM = require('../models/teacher.M');
+const accountM = require('../models/account.M');
 exports.getTeacherInfor = (req, res) => {
 	res.status(200).render('teacher-information', {
 		title: 'Teacher-information',
@@ -14,9 +15,13 @@ exports.becomeTeacher = async (req, res) => {
 		major: major,
 		introduction: introduction
 	}
+	//add teacher infor 
 	await teacherM.add(teacher)
-	const rs = await userM.updateRole(1, req.user.userid)
-	console.log(rs)
+	//update role 0->1
+	await userM.updateRole(1, req.user.userid)
+	const accountId = (await accountM.getByID(req.user.userid)).id
+	console.log(accountId)
+	await accountM.updateRole(1, accountId)
 	res.redirect('/teacher')
 }
 

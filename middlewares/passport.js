@@ -13,7 +13,6 @@ module.exports = (app) => {
         let account;
         try {
           account = await accM.get(username);
-  
           if (!account) {
             return done(null, false, { message: "Incorrect username" });
           }

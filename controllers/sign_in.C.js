@@ -27,7 +27,7 @@ exports.login = async (req, res, next) => {
         return res.status(200).render("login-2",{
           title: 'Login',
           layout: false,
-          notify: 'Sai tên đăng nhập!'
+          notify: 'Sai tên đăng nhập hoặc mật khẩu!'
         });
         
       }

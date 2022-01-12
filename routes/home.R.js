@@ -5,6 +5,7 @@ const homeController = require('../controllers/home.C')
 const viewController = require('../controllers/viewController')
 const teacherController = require('../controllers/teacher.C')
 const userController = require('../controllers/user.C')
+const courseController = require('../controllers/course.C')
 
 route.get('/', homeController.getHome)
 route.get('/dis-courses', viewController.getDisableCourse);
@@ -15,4 +16,7 @@ route.get('/teacher-information', teacherController.getTeacherInfor)
 route.get('/course-info', viewController.getCourseInfor)
 route.get('/user-info', userController.getInfo)
 route.post('/',teacherController.becomeTeacher)
+
+//teacher
+route.get('/course/:courseid/', courseController.getCourse)
 module.exports = route

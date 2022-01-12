@@ -1,9 +1,10 @@
-const db = require('./db.M')
+const database = require('./db.M')
 const tbName = 'account'
 const idFieldName = 'username'
 module.exports = {
     all: async () => {
-        const res = await db.load(tbName)
+        const res = await database.db.any('SELECT * FROM "public"."course" C JOIN "public"."USER" U ON C.userid = U.userid')
+        console.log(res)
         return res
     },
     get: async userName => {
@@ -22,16 +23,4 @@ module.exports = {
 
         return res
     },
-    add: async account => {
-        const res = await db.add(tbName, account)
-        return res
-    },
-    delete: async userName => {
-        const res = await db.delete(tbName,idFieldName, userName)
-        return res
-
-    },
-    updateRole: async (role, id) => {
-        const res = await db.update(tbName,'role', 'userid',id,role)
-    }
 }

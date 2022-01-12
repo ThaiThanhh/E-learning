@@ -1,8 +1,13 @@
-exports.getHome = (req, res) => {
+const courseM = require('../models/course.M')
+const db = require('../models/db.M')
+exports.getHome = async (req, res) => {
+    const courses = await db.getCourses()
+    const homeCourses = courses.slice(0, 4)
     if (!req.user) {
         res.status(200).render('home', {
             title: 'Trang chủ',
             layout:'main',
+            homeCourses: homeCourses,
             isTeacher: false
         })
     }
@@ -10,6 +15,7 @@ exports.getHome = (req, res) => {
         res.status(200).render('home', {
             title: 'Trang chủ',
             isTeacher: true,
+            homeCourses: homeCourses,
             layout:'main'
         })
 
@@ -17,6 +23,7 @@ exports.getHome = (req, res) => {
         res.status(200).render('home', {
             title: 'Trang chủ',
             layout:'main',
+            homeCourses: homeCourses,
             isTeacher: false
         })
     }

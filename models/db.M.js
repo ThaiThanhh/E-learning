@@ -2,6 +2,7 @@ const pgp = require('pg-promise')({
     capSQL : true
 })
 const dotenv = require("dotenv");
+const { Pool } = require('pg');
 if (process.env.NODE_ENV === "production") {
 	dotenv.config({ path: './configs/prod.env'});
 } else {
@@ -41,11 +42,13 @@ exports.get = async (tbName, fieldName, value) => {
     }
 }
 exports.update = async (tbName, fieldUpd, fieldName, value, upd) => {
+    const dataSingle = {role: upd}
     const table = new pgp.helpers.TableName({ table: tbName, schema: schema})
-    const qStr = pgp.as.format(`UPDATE "${tbName}" SET "${fieldUpd}" = ${upd}  WHERE "${fieldName}"=${value}`, table)
+    const condition = pgp.as.format(` WHERE "${fieldName}"=${value}`)
+    const qStr = pgp.helpers.update(dataSingle, ['role'], table) + condition + 'RETURNING *';
     console.log(qStr)
     try {
-        const res = await db.one(qStr)
+        const res = await db.any(qStr)
         console.log('res=', res)
         return res
     } catch(error) {
@@ -75,5 +78,13 @@ exports.delete = async (tbName, fieldName, value) => {
         return res
     } catch(error) {
         console.log('err')
+    }
+}
+exports.getCourses = async () => {
+    try {
+        const res = await db.any('SELECT * FROM "public"."course" C JOIN "public"."USER" U ON C.userid = U.userid')
+        return res
+    } catch(error) {
+        console.log('Lỗi khóa học',err)
     }
 }

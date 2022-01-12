@@ -11,16 +11,17 @@
     
     
     <div class="row py-5">
+      {{#each homeCourses}}
        <div class="col-md-3 mb-3">
          <div class="card">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <a class="d-block blur-shadow-image">
-                  <img src="./img/login-bg.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
+                <a href="/{{this.coursename}}?courseid={{this.courseid}}" class="d-block blur-shadow-image">
+                  <img src="{{this.url_image}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
                 </a>
             </div>
             <div class="card-body">
               <h5 class="font-weight-normal">
-                  <a href="javascript:;">Khóa học lập trình C++ cơ bản</a>
+                  <a href="/course/{{this.coursename}}?courseid={{this.courseid}}">{{this.coursename}}</a>
               </h5>
               <div class="d-flex justify-content-start mb-3 btn-outline-warning"> 
                   <i class="fas fa-star p-2"></i>
@@ -32,13 +33,13 @@
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer d-flex">
-                <img class="rounded-circle" src="./img/duck.jpg" style="width: 30px;height: 30px;">
-                <p class="mb-0">Nguyễn Văn A</p>
+                <img class="rounded-circle" src="{{this.avatar}}" style="width: 30px;height: 30px;">
+                <a href="/user/{{this.fullname}}/?userid={{this.userid}}" class="teacher_link">{{this.fullname}}</a>
             </div>
         </div>
       </div>
-   
-       <div class="col-md-3 mb-3">
+      {{/each}}
+       {{!-- <div class="col-md-3 mb-3">
          <div class="card">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <a class="d-block blur-shadow-image">
@@ -55,34 +56,6 @@
                   <i class="fas fa-star p-2"></i>
                   <i class="fas fa-star p-2"></i>
                   <i class="fas fa-star p-2"></i>
-              </div>
-            </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer d-flex">
-                <img class="rounded-circle" src="./img/duck.jpg" style="width: 30px;height: 30px;">
-                <p class="mb-0">Nguyễn Văn A</p>
-            </div>
-        </div>
-      </div>
-
-
-       <div class="col-md-3 mb-3">
-         <div class="card">
-            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                <a class="d-block blur-shadow-image">
-                  <img src="./img/login-bg.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
-                </a>
-            </div>
-            <div class="card-body">
-              <h5 class="font-weight-normal">
-                  <a href="javascript:;">Khóa học lập trình C++ cơ bản</a>
-              </h5>
-              <div class="d-flex justify-content-start mb-3 btn-outline-warning"> 
-                  <i class="fas fa-star p-2"></i>
-                  <i class="fas fa-star p-2"></i>
-                  <i class="fas fa-star p-2"></i>
-                  <i class="far fa-star p-2"></i>
-                  <i class="far fa-star p-2"></i>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -109,6 +82,34 @@
                   <i class="fas fa-star p-2"></i>
                   <i class="fas fa-star p-2"></i>
                   <i class="fas fa-star p-2"></i>
+                  <i class="far fa-star p-2"></i>
+                  <i class="far fa-star p-2"></i>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer d-flex">
+                <img class="rounded-circle" src="./img/duck.jpg" style="width: 30px;height: 30px;">
+                <p class="mb-0">Nguyễn Văn A</p>
+            </div>
+        </div>
+      </div>
+
+
+       <div class="col-md-3 mb-3">
+         <div class="card">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <a class="d-block blur-shadow-image">
+                  <img src="./img/login-bg.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
+                </a>
+            </div>
+            <div class="card-body">
+              <h5 class="font-weight-normal">
+                  <a href="javascript:;">Khóa học lập trình C++ cơ bản</a>
+              </h5>
+              <div class="d-flex justify-content-start mb-3 btn-outline-warning"> 
+                  <i class="fas fa-star p-2"></i>
+                  <i class="fas fa-star p-2"></i>
+                  <i class="fas fa-star p-2"></i>
                   <i class="fas fa-star p-2"></i>
                   <i class="far fa-star p-2"></i>
               </div>
@@ -119,7 +120,7 @@
                 <p class="mb-0">Nguyễn Văn A</p>
             </div>
         </div>
-    </div>
+    </div> --}}
     </div>
 
     <div class="row py-2">
