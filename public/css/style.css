@@ -43,6 +43,9 @@
     background-color: #7766C6;
     color: white !important;
 }
+a {
+  text-decoration: none;
+}
 .modal-open {
     padding: 0 !important;
 }

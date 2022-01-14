@@ -88,3 +88,19 @@ exports.getCourses = async () => {
         console.log('Lỗi khóa học',err)
     }
 }
+exports.getCourseByID = async (id) => {
+    try {
+        const res = await db.one(`SELECT *, to_char(C."startdate", \'DD/MM/YYYY\') as startdatee, to_char(C."enddate", \'DD/MM/YYYY\') as enddatee  FROM "public"."course" C JOIN "public"."USER" U ON C.userid = U.userid WHERE C.courseid = ${id}`)
+        return res
+    } catch(error) {
+        console.log('Lỗi khóa học',err)
+    }
+}
+exports.getReviews = async (courseId) => {
+    try {
+        const res = await db.any(`SELECT *,to_char(r."updated_at", \'DD/MM/YYYY\') as reviewTime FROM "public".review r join "public"."USER" u on r.userid = u.userid where r.courseid = ${courseId}`)
+        return res
+    } catch(error) {
+        console.log('Lỗi review hic',err)
+    }
+}
