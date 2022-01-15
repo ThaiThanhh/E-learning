@@ -1,13 +1,13 @@
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Huỳnh Thái Thành', '05/30/2001', 'Q1, TPHCM','thanh@gmail.com','0123456789','M', './img/thanh.jpg',2);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Nguyễn Quang An', '09/14/2001', 'Q1, TPHCM','an@gmail.com','0123456789','M', './img/an.jpg', 1);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Huỳnh Ngọc Văn', '10/11/2001', 'Q1, TPHCM','van@gmail.com','0123456789','M', './img/van.jpg', 0);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Nguyễn Thị Ngọc Mai', '08/20/2001', 'Q1, TPHCM','mai@gmail.com','0123456789','F', './img/mai.jpg',0);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Ngô Đình Minh Như', '09/26/2002','Q1, TPHCM', 'nhu@gmail.com','0123456789','F', './img/mai2.jpg',2);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Trần Lê Thanh Tuyền', '02/16/2001','Q1, TPHCM', 'tuyen@gmail.com','0123456789','F', './img/tram.jpg',1);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Huỳnh Trường Vũ', '09/24/2001','Q1, TPHCM', 'vu@gmail.com','0123456789','M', './img/dat.jpg', 1);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Kiều Thúy Vy', '10/05/2001','Q1, TPHCM', 'vy@gmail.com','0123456789','F', './img/thanh2.jpg', 1);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Lê Đức Anh', '09/15/2001','Q1, TPHCM', 'anh@gmail.com','0123456789','M', './img/an2.jpg', 0);
-insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avata, role) values ('Nguyễn Thôi Kim Phương', '11/17/2001', 'Q1, TPHCM','phuong@gmail.com','0123456789','F', './img/mai3.jpg', 0);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Huỳnh Thái Thành', '05/30/2001', 'Q1, TPHCM','thanh@gmail.com','0123456789','M', './img/thanh.jpg',2);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Nguyễn Quang An', '09/14/2001', 'Q1, TPHCM','an@gmail.com','0123456789','M', './img/an.jpg', 1);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Huỳnh Ngọc Văn', '10/11/2001', 'Q1, TPHCM','van@gmail.com','0123456789','M', './img/van.jpg', 0);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Nguyễn Thị Ngọc Mai', '08/20/2001', 'Q1, TPHCM','mai@gmail.com','0123456789','F', './img/mai.jpg',0);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Ngô Đình Minh Như', '09/26/2002','Q1, TPHCM', 'nhu@gmail.com','0123456789','F', './img/mai2.jpg',2);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Trần Lê Thanh Tuyền', '02/16/2001','Q1, TPHCM', 'tuyen@gmail.com','0123456789','F', './img/tram.jpg',1);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Huỳnh Trường Vũ', '09/24/2001','Q1, TPHCM', 'vu@gmail.com','0123456789','M', './img/dat.jpg', 1);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Kiều Thúy Vy', '10/05/2001','Q1, TPHCM', 'vy@gmail.com','0123456789','F', './img/thanh2.jpg', 1);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Lê Đức Anh', '09/15/2001','Q1, TPHCM', 'anh@gmail.com','0123456789','M', './img/an2.jpg', 0);
+insert into "USER" (fullname, dateofbirth, address, email, phonenumber, gender, avatar, role) values ('Nguyễn Thôi Kim Phương', '11/17/2001', 'Q1, TPHCM','phuong@gmail.com','0123456789','F', './img/mai3.jpg', 0);
 
 insert into account (username, password, status, role, userid) values ('admin1', '$2a$12$q5Mev.uQO7VfUsz2vIJ1j.eljgiQFtReMJQKXJycFI4MmlwMvehsK', 1 , 2, 1);
 insert into account (username, password, status, role, userid) values ('an123', '$2a$12$tGJyRan/jn2FF0QgDhfvweP7NLXHpNfFbjgP3XTl0b9LcWfd2kJqO', 1 , 1, 2);
@@ -83,12 +83,32 @@ insert into review (courseid, userid, star, review, updated_at) values (6, 4 , 5
 insert into review (courseid, userid, star, review, updated_at) values (7, 9 , 5, 'khóa học tuỵt zời', '01/01/2021');
 insert into review (courseid, userid, star, review, updated_at) values (8, 9 , 5, 'khóa học tuỵt zời', '01/01/2021');
 
-
-
-
-
-
-
+insert into schedule (courseid, day, time) values (1, 'Thứ 2' , '19:00');
+insert into schedule (courseid, day, time) values (1, 'Thứ 4' , '19:00');
+insert into schedule (courseid, day, time) values (1, 'Thứ 6' , '19:00');
+insert into schedule (courseid, day, time) values (2, 'Thứ 3' , '19:00');
+insert into schedule (courseid, day, time) values (2, 'Thứ 5' , '19:00');
+insert into schedule (courseid, day, time) values (2, 'Thứ 7' , '19:00');
+insert into schedule (courseid, day, time) values (3, 'Thứ 3' , '09:30');
+insert into schedule (courseid, day, time) values (3, 'Thứ 5' , '09:30');
+insert into schedule (courseid, day, time) values (4, 'Thứ 2' , '09:30');
+insert into schedule (courseid, day, time) values (4, 'Thứ 4' , '09:30');
+insert into schedule (courseid, day, time) values (4, 'Thứ 6' , '09:30');
+insert into schedule (courseid, day, time) values (5, 'Thứ 3' , '09:30');
+insert into schedule (courseid, day, time) values (5, 'Thứ 7' , '09:30');
+insert into schedule (courseid, day, time) values (6, 'Thứ 2' , '15:30');
+insert into schedule (courseid, day, time) values (6, 'Thứ 6' , '15:30');
+insert into schedule (courseid, day, time) values (7, 'Thứ 3' , '09:30');
+insert into schedule (courseid, day, time) values (7, 'Thứ 7' , '09:30');
+insert into schedule (courseid, day, time) values (8, 'Thứ 2' , '20:00');
+insert into schedule (courseid, day, time) values (8, 'Thứ 4' , '20:00');
+insert into schedule (courseid, day, time) values (8, 'Thứ 6' , '20:00');
+insert into schedule (courseid, day, time) values (9, 'Thứ 3' , '20:00');
+insert into schedule (courseid, day, time) values (9, 'Thứ 5' , '20:00');
+insert into schedule (courseid, day, time) values (9, 'Thứ 7' , '20:00');
+insert into schedule (courseid, day, time) values (10, 'Thứ 3' , '15:30');
+insert into schedule (courseid, day, time) values (10, 'Thứ 5' , '15:30');
+insert into schedule (courseid, day, time) values (10, 'Thứ 7' , '15:30');
 
 
 
