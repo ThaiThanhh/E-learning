@@ -3,7 +3,6 @@
 /* Created on:     12/27/2021 9:34:52 PM                        */
 /*==============================================================*/
 
-
 DROP INDEX IF EXISTS DISABLE_FK;
 
 DROP INDEX IF EXISTS DISABLE2_FK;
@@ -15,6 +14,8 @@ DROP INDEX IF EXISTS ENABLE_FK;
 DROP INDEX IF EXISTS ENABLE2_FK;
 
 DROP TABLE IF EXISTS ENABLE;
+
+DROP TABLE IF EXISTS SCHEDULE;
 
 DROP INDEX IF EXISTS JOIN_FK;
 
@@ -229,6 +230,16 @@ create table "USER" (
    constraint PK_USER primary key (USERID)
 );
 
+/*==============================================================*/
+/* Table: SCHEDULE                                                */
+/*==============================================================*/
+create table SCHEDULE (
+   COURSEID             INT4               not null,
+   DAY             	VARCHAR(10)          not null,
+   TIME          	TIME                 null,
+   constraint PK_SCHEDULE primary key (COURSEID, DAY)
+);
+
 alter table ACCOUNT
    add constraint FK_ACCOUNT_OWN_USER foreign key (USERID)
       references "USER" (USERID);
@@ -276,6 +287,7 @@ alter table REVIEW
 alter table TEACHER
    add constraint FK_TEACHER_INHERITAN_USER foreign key (USERID)
       references "USER" (USERID);
-
-
-
+	  
+alter table SCHEDULE
+   add constraint FK_COURSE_SCHEDULE foreign key (COURSEID)
+      references COURSE (COURSEID);
