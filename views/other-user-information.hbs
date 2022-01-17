@@ -1,0 +1,87 @@
+<div class="m-4">
+    <div class="app__back ">
+        <a href="/" class="primary-color fs-5">
+            <i class="fas fa-angle-left"></i>
+            Trở lại
+        </a>
+    </div>
+    <div class="teacher__info mt-4">
+        <div class="d-flex align-item-center">
+            <div class="teacher__avatar-container me-4">
+                <img class="teacher-ava" src="{{user.avatar}}" alt="ảnh">
+            </div>
+            <div class="teacher__basic-info ms-4 d-flex flex-column justify-content-between">
+                <div class="teacher__name d-flex flex-column">
+                    <span class="fw-bold">Giảng Viên</span>
+                    <span>{{user.fullname}}</span>
+                </div>
+                <div class="teacher__major d-flex flex-column">
+                    <span class="fw-bold">Chuyên Ngành</span>
+                    <span>{{user.major}}</span>
+                </div>
+                <div class="teacher__gender d-flex flex-column">
+                    <span class="fw-bold">Giới Tính</span>
+                    <span>{{user.gender}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="teacher__intro mt-4">
+            <h5>Giới Thiệu</h5>
+            <p class="teacher__intro-text fs-5">
+                Hiện nay cô đang là giảng viên Đại học Khoa học tự nhiên, ĐHQG TPHCM. Cô có nhiều kinh nghiệm giảng dạy tiếng Anh tại Mĩ và Việt Nam, dạy kèm nâng cao một số nhóm học sinh các trường quốc tế UNIS, TH schools, BVIS, Vinschools, Trường Quốc Tế Pháp Alexandre Yersin - Hanoi, Vietnam,... Ngoài ra cô còn tham gia các hoạt động liên quan đến giáo dục như cố vấn các chương trình trên kênh VTV1, VTV6, VTV7.
+                <br>
+                Với quan điểm "Học nhẹ nhàng, bản chất, và hiệu quả", cô tin rằng bất kể học sinh nào cũng có thể tiến bộ nếu được thầy cô giỏi hướng dẫn..
+                <br>
+                {{user.introduction}}
+            </p>
+        </div>
+        <div class="teacher__courses">
+            <h5>Các Khóa Học Của Giảng Viên</h5>
+            <div class="courses">
+        {{#each courses}}
+            <div class="course">
+            <div class="courses-top">
+                <a href="/course/{{this.coursename}}?courseid={{this.courseid}}">
+                <img src="{{this.url_image}}" alt="" class="courses-image" />
+                </a>
+
+                <div class="overlay">
+                <button type="button" class="btn btn-secondary" title="detail"><i
+                    class="fa fa-eye"
+                    ></i></button>
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    title="add-to-list"
+                ><i class="fa fa-shopping-bag"></i></button>
+                </div>
+            </div>
+            <div class="courses-content">
+                <div class="courses-center ms-2">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                </div>
+                <h3 class="courses-name ms-2">
+                    <a class="primary-color"
+                    href="/course/{{this.coursename}}?courseid={{this.courseid}}"
+                    >{{this.coursename}}</a>
+                </h3>
+                <div class="courses-bottom d-flex justify-content-between">
+                <img
+                    src="{{this.avatar}}"
+                    alt=""
+                    class="courses-teacher-avatar"
+                />
+                <a href="/user/info/{{this.fullname}}/?userid={{this.userid}}" class="teacher_link">{{this.fullname}}</a>
+                </div>
+            </div>
+
+            </div>
+        {{/each}}
+        </div>
+        </div>
+    </div>
+</div>
