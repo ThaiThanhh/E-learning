@@ -1,5 +1,5 @@
 const database = require('./db.M')
-const tbName = 'account'
+const tbName = 'course'
 const idFieldName = 'username'
 module.exports = {
     get: async userName => {

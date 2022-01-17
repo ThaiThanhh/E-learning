@@ -28,6 +28,7 @@
 }
 .user-icon-container:hover .user-menu{
     display: block !important;
+    z-index: 2;
 }
 .user-icon-container {
     cursor: pointer;
@@ -164,4 +165,6 @@ a {
     border: none !important;
     box-shadow: none !important;
   }
-  
+  .teacher-nav {
+    background-color: #E0DFFD;
+  }

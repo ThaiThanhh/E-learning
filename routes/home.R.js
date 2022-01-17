@@ -12,11 +12,14 @@ route.get('/dis-courses', viewController.getDisableCourse);
 route.get('/en-courses', viewController.getEnableCourse);
 route.get('/list-courses', viewController.getListCourse);
 route.get('/search-courses', viewController.getSearchCourse);
-route.get('/teacher-information', teacherController.getTeacherInfor)
 route.get('/course-info', viewController.getCourseInfor)
 route.get('/user-info', userController.getInfo)
 route.post('/',teacherController.becomeTeacher)
 
 //teacher
 route.get('/course/:courseid/', courseController.getCourse)
+route.get('/teacher/my-courses',teacherController.getTeacherView)
+//information of user
+route.get('/user/info/:username/', userController.viewUserInfor)
+route.get('/teacher/information', teacherController.getTeacherInfor)
 module.exports = route

@@ -104,3 +104,26 @@ exports.getReviews = async (courseId) => {
         console.log('Lỗi review hic',err)
     }
 }
+
+exports.getUserInfo = async (userid) => {
+    try {
+        const res = await db.one(`SELECT * FROM "public"."USER" u left JOIN
+        teacher t on u.userid = t.userid
+        WHERE u.userid = ${userid}`)
+        return res
+    } catch(error) {
+        console.log('Lỗi review hic',err)
+    }
+}
+
+exports.getCoursesOfTeacher = async (userid) => {
+    try {
+        const res = await db.any(`SELECT * FROM COURSE C JOIN "public"."USER" U 
+        ON C.userid = U.userid
+        WHERE C.userid = ${userid}`)
+        return res
+    } catch(error) {
+        console.log('Lỗi review hic',error)
+    }
+}
+

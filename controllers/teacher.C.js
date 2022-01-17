@@ -1,9 +1,12 @@
 const userM = require('../models/user.M')
 const teacherM = require('../models/teacher.M');
 const accountM = require('../models/account.M');
-exports.getTeacherInfor = (req, res) => {
-	res.status(200).render('teacher-information', {
+const db = require('../models/db.M')
+exports.getTeacherInfor = async (req, res) => {
+	const teacher = await db.getUserInfo(req.user.userid)
+	res.status(200).render('teacher-info', {
 		title: 'Teacher-information',
+		teacher: teacher
 	});
 };
 
@@ -25,6 +28,13 @@ exports.becomeTeacher = async (req, res) => {
 	res.redirect('/teacher')
 }
 
-exports.getTeacher = async (req, res) =>{
-
+exports.getTeacherView = async (req, res) =>{
+	const userId = req.user.userid
+	const teacher = teacherM.getByID(userId)
+	const courses = await db.getCoursesOfTeacher(userId)
+	res.status(200).render('teacher', {
+		title: 'Teacher',
+		teacher: teacher,
+		courses: courses,
+	});
 }

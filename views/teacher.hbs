@@ -1,0 +1,73 @@
+<div class="teacher-nav d-flex justify-content-between align-items-center">
+  <div class="teacher-nav-container">
+    <a
+      href="/teacher/my-courses"
+      class="teacher-nav-link primary-color ms-4 me-4"
+    >Khóa Học Của Tôi</a>
+    <a href="/teacher/information" class="teacher-nav-link primary-color">Thông
+      Tin</a>
+  </div>
+  <a type="button" class="btn primary-btn m-2 me-4">+ Thêm Khóa Học</a>
+</div>
+<div class="teacher-body">
+  <div class="courses-container mt-4">
+    <span class="teacher-body__heading fs-5 m-4">
+      Có
+      {{courses.length}}
+      khóa học
+    </span>
+    {{#unless courses}}
+      <div class="d-flex justify-content-center">
+        <img src="./img/sad.jpg" alt="" />
+
+      </div>
+    {{/unless}}
+    <div class="courses">
+      {{#each courses}}
+        <div class="course">
+          <div class="courses-top">
+            <a href="/course/{{this.coursename}}?courseid={{this.courseid}}">
+              <img src="{{this.url_image}}" alt="" class="courses-image" />
+            </a>
+
+            <div class="overlay">
+              <button type="button" class="btn btn-secondary" title="detail"><i
+                  class="fa fa-eye"
+                ></i></button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                title="add-to-list"
+              ><i class="fa fa-shopping-bag"></i></button>
+            </div>
+          </div>
+          <div class="courses-content">
+            <div class="courses-center ms-2">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3 class="courses-name ms-2">
+              <a
+                class="primary-color"
+                href="/course/{{this.coursename}}?courseid={{this.courseid}}"
+              >{{this.coursename}}</a>
+            </h3>
+            <div class="courses-bottom d-flex justify-content-between">
+              <img
+                src="{{this.avatar}}"
+                alt=""
+                class="courses-teacher-avatar"
+              />
+              <span class="courses-teacher-name me-2">{{this.fullname}}</span>
+            </div>
+          </div>
+
+        </div>
+      {{/each}}
+    </div>
+
+  </div>
+</div>
