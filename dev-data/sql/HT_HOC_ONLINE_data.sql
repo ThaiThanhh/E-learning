@@ -34,16 +34,16 @@ insert into teacher (userid, major, introduction) values (6, 'Công nghệ thôn
 insert into teacher (userid, major, introduction) values (7, 'Ngôn ngữ Anh', 'tốt nghiệp loại giỏi chuyên ngành hệ thống thông tin - Đại học Khoa học tự nhiên TPHCM');
 insert into teacher (userid, major, introduction) values (8, 'Marketing', 'tốt nghiệp loại giỏi chuyên ngành hệ thống thông tin - Đại học Khoa học tự nhiên TPHCM');
 
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('HTML, CSS từ Zero đến Hero', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/html.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('JavaScript Cơ Bản', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/jscb.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Kiến Thức Nhập Môn', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/ktnt.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Responsive Với Grid System', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/responsive.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Node & ExpressJS', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/nodejs.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Xây Dựng Website với ReactJS', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/reactjs.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('HTML, CSS Tips & Tricks', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 7, './img/tip&trick.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('JavaScript Nâng Cao', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 7, './img/jsnc.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('App "Đừng Chạm Tay Lên Mặt"', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 8, './img/dtyf.png');
-insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image) values ('Làm việc với Terminal & Ubuntu', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 8, './img/win.png');
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('HTML, CSS từ Zero đến Hero', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/html.png', 2);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('JavaScript Cơ Bản', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/jscb.png', 2);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('Kiến Thức Nhập Môn', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 2, './img/ktnt.png', 1);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('Responsive Với Grid System', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/responsive.png', 2);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('Node & ExpressJS', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/nodejs.png', 1);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('Xây Dựng Website với ReactJS', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 6, './img/reactjs.png', 1);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('HTML, CSS Tips & Tricks', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 7, './img/tip&trick.png', 1);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('JavaScript Nâng Cao', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 7, './img/jsnc.png', 1);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('App "Đừng Chạm Tay Lên Mặt"', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 8, './img/dtyf.png', 1);
+insert into course (coursename, startdate, enddate, capacity, fee, description, userid, url_image, ASSIGNED_STUDENT) values ('Làm việc với Terminal & Ubuntu', '01/01/2021','01/02/2021', 50, 2500000, 'khóa học đáng học', 8, './img/win.png', 1);
 
 insert into "JOIN" (courseid,userid, registered_at) values (1, 3, '01/01/2021');
 insert into "JOIN" (courseid,userid, registered_at) values (1, 10, '01/01/2021');

@@ -94,6 +94,8 @@ create table COURSE (
    ENDDATE              DATE                 null,
    CAPACITY             INT4                 null,
    FEE                  INT4                 null,
+   STATUS               INT4                 default 1, /* 0: disable 1:active */
+   ASSIGNED_STUDENT     INT4                 default 0,  
    DESCRIPTION          TEXT                 null,
    URL_IMAGE            TEXT                 NULL,
    constraint PK_COURSE primary key (COURSEID)
