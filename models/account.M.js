@@ -24,6 +24,7 @@ module.exports = {
     },
     add: async account => {
         const res = await db.add(tbName, account)
+        console.log('aaaaaaa',res)
         return res
     },
     delete: async userName => {

@@ -23,3 +23,26 @@ exports.viewUserInfor = async (req, res) => {
         courses: courses
     })
 }
+exports.chageInfo = async (req, res) => {
+    const userID = req.user.userid
+    console.log(userID)
+    const rs = await db.changeInfo(req.body, userID)
+    res.redirect('/user-info')
+}
+
+exports.viewAllCourse = async (req, res) => {
+    const courses = await db.getCourses()
+    console.log(courses)
+    res.status(200).render('list-courses', {
+        courses: courses
+    })
+}
+exports.searchCourse = async (req, res) => {
+    const searchText = req.body
+    console.log(searchText)
+    const courses = await db.searchCourses(searchText)
+    console.log(courses)
+    res.status(200).render('list-courses', {
+        courses: courses
+    })
+}

@@ -18,20 +18,29 @@
       >
         <b class="text-white">Trở Thành Giảng Viên</b>
       </a>
-
+      <a
+        href="/all-courses"
+        class="nav-link text-body p-0 position-relative ms-4"
+      >
+        <b class="text-white">Tất Cả Khóa Học</b>
+      </a>
       <div
         class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
         id="navbar"
       >
         <div class="ms-md-auto pe-md-3 d-flex align-items-center">
           <div class="input-group input-group-outline">
+            <form action="/search" method="post">
             <input
               type="text"
               placeholder="Search here"
               class="form-control"
               onfocus="focused(this)"
               onfocusout="defocused(this)"
+              name="searchText"
             />
+
+            </form>
           </div>
         </div>
         <ul class="navbar-nav justunlessy-content-end">

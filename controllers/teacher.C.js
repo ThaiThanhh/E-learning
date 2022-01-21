@@ -25,7 +25,7 @@ exports.becomeTeacher = async (req, res) => {
 	const accountId = (await accountM.getByID(req.user.userid)).id
 	console.log(accountId)
 	await accountM.updateRole(1, accountId)
-	res.redirect('/teacher')
+	res.redirect('/teacher/my-courses')
 }
 
 exports.getTeacherView = async (req, res) =>{

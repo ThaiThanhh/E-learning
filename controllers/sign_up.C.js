@@ -16,20 +16,22 @@ exports.signup = async (req, res) => {
         res.redirect('/')
     }
     const username = req.body.username
-    const psw = req.body.password
+    const psw = req.body.psw
+    console.log(psw)
     const salt = Date.now().toString(16)
     let account = await accountM.get(username)
-    console.log(account)
     if (account.length > 0){
         res.redirect('/signin')
         return
     }
     //init user
     let user = {
-        role: 0
+        role: 0,
+        avatar: './img/thanh.jpg'
     }
     const rs = await userM.add(user)
     const hash = await bcrypt.hashSync(psw, saltRounds);
+    console.log(hash)
     account = {
         username: username,
         password: hash,

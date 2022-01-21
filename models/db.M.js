@@ -127,3 +127,26 @@ exports.getCoursesOfTeacher = async (userid) => {
     }
 }
 
+exports.changeInfo = async (values, userid) => {
+    try {
+        const query =`UPDATE "public"."USER" SET fullname = '${values.fullname}'
+        ,email = '${values.email}', address = '${values.address}', phonenumber = '${values.phoneNumber}'
+        ,gender = '${values.gender}' where userid = ${userid}`
+        const res = await db.one(query)
+        return res
+    } catch(error) {
+        console.log('Lỗi hic',error)
+    }
+}
+exports.searchCourses = async (searchText) => {
+    try {
+        const query =`SELECT * FROM "public"."course" C 
+        JOIN "public"."USER" U ON C.userid = U.userid 
+        WHERE C.coursename like '%${searchText.searchText}%'`
+        console.log(query)
+        const res = await db.any(query)     
+        return res
+    } catch(error) {
+        console.log('Lỗi hic',error)
+    }
+}

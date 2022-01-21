@@ -14,8 +14,10 @@ route.get('/list-courses', viewController.getListCourse);
 route.get('/search-courses', viewController.getSearchCourse);
 route.get('/course-info', viewController.getCourseInfor)
 route.get('/user-info', userController.getInfo)
+route.post('/user-info/change', userController.chageInfo)
 route.post('/',teacherController.becomeTeacher)
-
+route.get('/all-courses',userController.viewAllCourse )
+route.post('/search', userController.searchCourse)
 //teacher
 route.get('/course/:courseid/', courseController.getCourse)
 route.get('/teacher/my-courses',teacherController.getTeacherView)

@@ -1,15 +1,16 @@
-<div class="contain">
+<div class="m-4">
+<div class="contain m-0 p-4">
   <div class="col-12 d-flex justify-content-between align-items-center">
     <h2>Lập trình</h2>
     <a href="#" class="btn btn-light btn-sm text-black">Xem tất cả
       <i class="fa fa-chevron-right"></i>
     </a>
   </div>
-
   <div class="courses">
+  {{#each courses}}
     <div class="course">
       <div class="courses-top">
-        <img src="images/ktnt.png" alt="" class="courses-image" />
+        <img src="{{this.url_image}}" alt="" class="courses-image" />
         <div class="overlay">
           <button type="button" class="btn btn-secondary" title="detail"><i
               class="fa fa-eye"
@@ -20,408 +21,27 @@
         </div>
       </div>
       <div class="courses-content">
-        <div class="courses-center">
+        <div class="courses-center ms-2">
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <h3 class="courses-name">
-            <span>Kiến thức nền tảng</span>
+            <a href="/course/{{this.coursename}}?courseid={{this.courseid}}">{{this.coursename}}</a>
           </h3>
         </div>
         <div class="courses-bottom">
           <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            src="{{this.avatar}}"
             alt=""
             class="courses-teacher-avatar"
           />
-          <span class="courses-teacher-name">Teacher's name</span>
+          <a href="/user/info/{{this.fullname}}/?userid={{this.userid}}" class="courses-teacher-name">{{this.fullname}}</a>
         </div>
       </div>
     </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/jscb.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>Javascript cơ bản</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-    </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/jsnc.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>Javascript nâng cao</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-    </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/html.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>HTML, CSS từ cơ bản đến nâng cao</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-12 d-flex justify-content-between align-items-center">
-    <h2>Nghệ thuật</h2>
-    <a href="#" class="btn btn-light btn-sm text-black">Xem tất cả
-      <i class="fa fa-chevron-right"></i>
-    </a>
-  </div>
-  <div class="courses">
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/ktnt.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>Kiến thức nền tảng</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-    </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/jscb.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>Javascript cơ bản</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-    </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/jsnc.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>Javascript nâng cao</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-    </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/html.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>HTML, CSS từ cơ bản đến nâng cao</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-12 d-flex justify-content-between align-items-center">
-    <h2>Khác</h2>
-    <a href="#" class="btn btn-light btn-sm text-black">Xem tất cả
-      <i class="fa fa-chevron-right"></i>
-    </a>
-  </div>
-  <div class="courses">
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/ktnt.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>Kiến thức nền tảng</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-    </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/jscb.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>Javascript cơ bản</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-    </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/jsnc.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>Javascript nâng cao</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-    </div>
-    <div class="course">
-      <div class="courses-top">
-        <img src="images/html.png" alt="" class="courses-image" />
-        <div class="overlay">
-          <button type="button" class="btn btn-secondary" title="detail"><i
-              class="fa fa-eye"
-            ></i></button>
-          <button type="button" class="btn btn-secondary" title="add-to-list"><i
-              class="fa fa-shopping-bag"
-            ></i></button>
-        </div>
-      </div>
-      <div class="courses-content">
-        <div class="courses-center">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <h3 class="courses-name">
-            <span>HTML, CSS từ cơ bản đến nâng cao</span>
-          </h3>
-        </div>
-        <div class="courses-bottom">
-          <img
-            src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt=""
-            class="courses-teacher-avatar"
-          />
-          <span class="courses-teacher-name">Teacher's name</span>
-        </div>
-      </div>
-
-    </div>
+  {{/each}}
   </div>
 </div>
 <nav style="height: 100px;">
@@ -445,3 +65,5 @@
     </li>
   </ul>
 </nav>
+
+</div>
