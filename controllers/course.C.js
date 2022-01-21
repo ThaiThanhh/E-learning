@@ -39,3 +39,4 @@ exports.getCourse = async (req, res) => {
 		layout: 'main'
 	});
 }
+

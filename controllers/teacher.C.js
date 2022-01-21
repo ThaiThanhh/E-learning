@@ -39,3 +39,10 @@ exports.getTeacherView = async (req, res) =>{
 		courses: courses,
 	});
 }
+
+exports.getAddCourse = async (req, res) =>{
+	res.status(200).render('add-course', {
+		title: 'Tạo khóa học'
+	});
+}
+

@@ -181,3 +181,15 @@ exports.updateStatusCourse = async (courseid, status) => {
         console.log('Lỗi hic',error)
     }
 }
+
+exports.addCourse = async (userid, course_name, start_date, end_date, fee, capacity, description) => {
+    try {
+        const query =`insert into "public"."course"(userid, coursename, startdate, enddate, fee, capacity, description url_image) 
+        values ('${userid}', '${course_name}', '${start_date}', '${end_date}', '${fee}', '${capacity}', '${description}', './img/ktnt.png')`
+        console.log(query)
+        const res = await db.one(query)
+        return res
+    } catch(error) {
+        console.log('Lỗi hic',error)
+    }
+}

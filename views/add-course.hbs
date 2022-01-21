@@ -1,0 +1,45 @@
+<div class ="container py-5" style="height: 900px;width:700px;">
+    <div><h5>Tạo khóa học</h5></div>
+<form action="teacher/add-course/add" method="post">
+  <div class="row">
+      <div>
+        <label class="form-label">Tên khóa học</label>
+        <input type="text" class="form-control" name="course_name">
+    </div>
+    </div>
+    <div class="row">
+        <div>
+        <label class="form-label">Ngày bắt đầu</label>
+        <input type="date" class="form-control" name="start_date">
+        </div>
+  </div>
+  <div class="row">
+      <div>
+        <label class="form-label">Ngày kết thúc</label>
+        <input type="date" class="form-control" name="end_date">
+    </div>
+  </div>
+  <div class="row">
+      <div>
+        <label class="form-label">Học phí</label>
+        <input type="text" class="form-control" name="fee" >
+        </div>
+  </div>
+  <div class="row">
+      <div>
+        <label class="form-label">Số học viên tối đa</label>
+        <input type="text" class="form-control" name="capacity">
+    </div>
+  </div>
+    <div class="row">
+        <div>
+            <label class="form-label">Mô tả</label>
+            <textarea class="form-control" name="discription" ></textarea>
+        </div>
+     </div>
+  <div class="row py-5">
+      <div class="col">
+        <button class="btn btn-primary mt-3" type="submit">Tạo khóa học</button>
+    </div>
+</form>
+</div>

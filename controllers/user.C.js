@@ -1,5 +1,6 @@
 const userM = require('../models/user.M')
 const db = require('../models/db.M')
+const teacherM = require('../models/teacher.M')
 exports.getInfo =  async(req, res) => {
     const userR = req.user
     if (!userR) {
@@ -45,4 +46,12 @@ exports.searchCourse = async (req, res) => {
     res.status(200).render('list-courses', {
         courses: courses
     })
+}
+
+exports.addCourse = async (req, res) =>{
+    const userID = req.user.userid;
+    console.log(req.user.userid);
+    const {course_name, start_date, end_date, fee, capacity, description} = req.body;
+    await db.addCourse(userID, course_name, start_date, end_date, fee, capacity, description)
+    res.redirect('/teacher/my-courses')
 }
