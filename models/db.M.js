@@ -132,6 +132,7 @@ exports.changeInfo = async (values, userid) => {
         const query =`UPDATE "public"."USER" SET fullname = '${values.fullname}'
         ,email = '${values.email}', address = '${values.address}', phonenumber = '${values.phoneNumber}'
         ,gender = '${values.gender}' where userid = ${userid}`
+        console.log(query)
         const res = await db.one(query)
         return res
     } catch(error) {
@@ -145,6 +146,36 @@ exports.searchCourses = async (searchText) => {
         WHERE C.coursename like '%${searchText.searchText}%'`
         console.log(query)
         const res = await db.any(query)     
+        return res
+    } catch(error) {
+        console.log('Lỗi hic',error)
+    }
+}
+exports.updateRoleAcc = async (userid) => {
+    try {
+        const query =`UPDATE "public"."account" SET role = 1
+        where userid = ${userid}`
+        console.log(query)
+        const res = await db.one(query)
+        return res
+    } catch(error) {
+        console.log('Lỗi hic',error)
+    }
+}
+exports.getCoursesActive = async () => {
+    try {
+        const res = await db.any('SELECT * FROM "public"."course" C JOIN "public"."USER" U ON C.userid = U.userid where status = 1')
+        return res
+    } catch(error) {
+        console.log('Lỗi khóa học',err)
+    }
+}
+exports.updateStatusCourse = async (courseid, status) => {
+    try {
+        const query =`UPDATE "public"."course" SET status = ${status}
+        where courseid = ${courseid}`
+        console.log(query)
+        const res = await db.one(query)
         return res
     } catch(error) {
         console.log('Lỗi hic',error)

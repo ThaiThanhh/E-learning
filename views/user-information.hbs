@@ -43,8 +43,8 @@
         <label for="select-gender" class="form-label">Giới tính</label>
       <select class="form-select" id="select-gender" name="gender">
         <option value="">Giới Tính</option>
-        <option value="M">Nam</option>
-        <option value="F">Nữ</option>
+        <option value="M" {{#if isMale}} selected {{/if}}>Nam</option>
+        <option value="F" {{#unless isMale}} selected {{/unless}}>Nữ</option>
       </select>
     </div>
     <button type="submit" class="btn primary-btn primary-color">Lưu thay đổi</button>

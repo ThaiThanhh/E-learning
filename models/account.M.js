@@ -34,5 +34,6 @@ module.exports = {
     },
     updateRole: async (role, id) => {
         const res = await db.update(tbName,'role', 'userid',id,role)
+        return res
     }
 }

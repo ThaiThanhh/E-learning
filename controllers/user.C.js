@@ -15,12 +15,13 @@ exports.getInfo =  async(req, res) => {
 exports.viewUserInfor = async (req, res) => {
     const userId = req.query.userid
     const user = await db.getUserInfo(userId)
-    user.gender = (user.gender == 'M') ? 'Nam' : 'Nữ'
+    const isMale = (user.gender == 'M') ? true : false
     const courses = await db.getCoursesOfTeacher(userId)
     res.status(200).render('other-user-information', {
         title: 'Thông tin cá nhân',
         user: user,
-        courses: courses
+        courses: courses,
+        isMale: isMale
     })
 }
 exports.chageInfo = async (req, res) => {
@@ -32,14 +33,12 @@ exports.chageInfo = async (req, res) => {
 
 exports.viewAllCourse = async (req, res) => {
     const courses = await db.getCourses()
-    console.log(courses)
     res.status(200).render('list-courses', {
         courses: courses
     })
 }
 exports.searchCourse = async (req, res) => {
     const searchText = req.body
-    console.log(searchText)
     const courses = await db.searchCourses(searchText)
     console.log(courses)
     res.status(200).render('list-courses', {
