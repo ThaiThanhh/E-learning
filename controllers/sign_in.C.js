@@ -39,7 +39,6 @@ exports.login = async (req, res, next) => {
             notify: err
           });
         }
-        
         return res.redirect('/')
       })
     }) (req, res, next)

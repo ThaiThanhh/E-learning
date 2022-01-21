@@ -8,12 +8,34 @@ exports.getCourse = async (req, res) => {
     const relativeCourses = courses.slice(0, 4)
 	//get review
 	const reviews = await db.getReviews(courseId)
-
-    res.status(200).render('course-information', {
+	if (!req.user) {
+		return res.status(200).render('course-information', {
+			title: 'Course-information',
+			course: course,
+			relativeCourses: relativeCourses,
+			reviews: reviews,
+			isAdmin: false,
+			layout: 'main'
+		});
+	}
+	if (req.user.role == 2) {
+		const isDisabled = (course.status == 0)? true : false
+		return res.status(200).render('course-information', {
+			title: 'Course-information',
+			course: course,
+			relativeCourses: relativeCourses,
+			reviews: reviews,
+			isAdmin: true,
+			isDisabled: isDisabled,
+			layout: 'main'
+		});
+	}
+	res.status(200).render('course-information', {
 		title: 'Course-information',
 		course: course,
 		relativeCourses: relativeCourses,
 		reviews: reviews,
+		isAdmin: false,
 		layout: 'main'
 	});
 }

@@ -26,13 +26,41 @@
         <h6 class="course-details">Trạng thái:
           <span style="color:green;"> Sắp bắt đầu</span>
         </h6>
-
-        <div class="action">
-          <button class="course-status btn btn-success" type="button">
-            Ghi danh
-            <a href=""></a>
-          </button>
-        </div>
+        {{#unless isAdmin}}
+          <div class="action">
+            <button
+              class="course-status btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#payment"
+              type="button"
+            >
+              Ghi danh
+              <a href=""></a>
+            </button>
+          </div>
+        {{/unless}}
+        {{#if isAdmin}}
+          <div class="action">
+            {{#if isDisabled}}
+              <a
+                href="/course/{{course.courseid}}/enable"
+                class="course-status btn btn-success"
+                type="button"
+              >
+                Enable
+              </a>
+            {{/if}}
+            {{#unless isDisabled}}
+              <a
+                href="/course/{{course.courseid}}/disable"
+                class="course-status btn btn-danger"
+                type="button"
+              >
+                Disable
+              </a>
+            {{/unless}}
+          </div>
+        {{/if}}
       </div>
     </div>
   </div>
@@ -89,6 +117,7 @@
             <button type="button" class="btn btn-secondary" title="add-to-list"><i
                 class="fa fa-shopping-bag"></i></button>
           </div>
+<<<<<<< HEAD
         </div>
         <div class="courses-content">
           <div class="courses-center ms-2">
@@ -106,6 +135,33 @@
             <img src="{{this.avatar}}" alt="" class="courses-teacher-avatar" />
             <a href="/user/info/{{this.fullname}}/?userid={{this.userid}}"
               class="teacher_link primary-color">{{this.fullname}}</a>
+=======
+          <div class="courses-content">
+            <div class="courses-center ms-2">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3 class="courses-name ms-2">
+              <a
+                class="primary-color"
+                href="/course/{{this.coursename}}?courseid={{this.courseid}}"
+              >{{this.coursename}}</a>
+            </h3>
+            <div class="courses-bottom d-flex justify-content-between">
+              <img
+                src="{{this.avatar}}"
+                alt=""
+                class="courses-teacher-avatar"
+              />
+              <a
+                href="/user/info/{{this.fullname}}/?userid={{this.userid}}"
+                class="teacher_link primary-color"
+              >{{this.fullname}}</a>
+            </div>
+>>>>>>> c6fba7b358aedf4e667b13a6992237b50d489eb7
           </div>
         </div>
       </div>
@@ -123,23 +179,60 @@
     </span>
   </h5>
   {{#each reviews}}
-  <div class="review">
-    <h5 class="card-header">{{this.fullname}}</h5>
-    <div class="card-body">
-      <div class="d-flex justify-content-between align-item-center">
+    <div class="review">
+      <h5 class="card-header">{{this.fullname}}</h5>
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-item-center">
 
-        <div class="rating">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
+          <div class="rating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <h6>{{this.reviewTime}}</h6>
         </div>
-        <h6>{{this.reviewTime}}</h6>
+        <p class="card-text">{{this.review}}</p>
       </div>
-      <p class="card-text">{{this.review}}</p>
     </div>
+<<<<<<< HEAD
   </div>
+=======
+>>>>>>> c6fba7b358aedf4e667b13a6992237b50d489eb7
   {{/each}}
 
+</div>
+{{! Thanh toan }}
+<div
+  class="modal fade"
+  id="payment"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thanh Toán</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Trở lại</button>
+        <button type="button" class="btn btn-primary">Xác nhận</button>
+      </div>
+    </div>
+  </div>
 </div>
