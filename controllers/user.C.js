@@ -15,6 +15,7 @@ exports.getInfo =  async(req, res) => {
 exports.viewUserInfor = async (req, res) => {
     const userId = req.query.userid
     const user = await db.getUserInfo(userId)
+    user.gender = (user.gender == 'M') ? 'Nam' : 'Nữ' 
     const isMale = (user.gender == 'M') ? true : false
     const courses = await db.getCoursesOfTeacher(userId)
     res.status(200).render('other-user-information', {

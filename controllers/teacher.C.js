@@ -4,6 +4,7 @@ const accountM = require('../models/account.M');
 const db = require('../models/db.M')
 exports.getTeacherInfor = async (req, res) => {
 	const teacher = await db.getUserInfo(req.user.userid)
+	teacher.gender = (teacher.gender == 'M') ? 'Nam' : 'Nữ'
 	res.status(200).render('teacher-info', {
 		title: 'Teacher-information',
 		teacher: teacher
