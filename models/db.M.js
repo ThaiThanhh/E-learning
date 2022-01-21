@@ -184,7 +184,7 @@ exports.updateStatusCourse = async (courseid, status) => {
 
 exports.addCourse = async (userid, course_name, start_date, end_date, fee, capacity, description) => {
     try {
-        const query =`insert into "public"."course"(userid, coursename, startdate, enddate, fee, capacity, description url_image) 
+        const query =`insert into "public"."course"(userid, coursename, startdate, enddate, fee, capacity, description, url_image) 
         values ('${userid}', '${course_name}', '${start_date}', '${end_date}', '${fee}', '${capacity}', '${description}', './img/ktnt.png')`
         console.log(query)
         const res = await db.one(query)
