@@ -21,6 +21,8 @@ route.post('/search', userController.searchCourse)
 //teacher
 route.get('/course/:courseid/', courseController.getCourse)
 route.get('/teacher/my-courses',teacherController.getTeacherView)
+route.get('/teacher/add-course',teacherController.getAddCourse)
+route.post('/teacher/add-course/add',userController.addCourse)
 //information of user
 route.get('/user/info/:username/', userController.viewUserInfor)
 route.get('/teacher/information', teacherController.getTeacherInfor)
